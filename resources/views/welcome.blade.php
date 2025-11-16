@@ -131,13 +131,16 @@
                                 Dashboard
                             </a>
                         @else
-                            <a href="{{ route('login') }}" class="font-medium transition-colors" :class="scrolled ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-primary-200'">Log in</a>
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="px-6 py-2.5 rounded-lg bg-gradient-to-r from-primary-500 to-accent-600 text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
-                                    Get Started Free
-                                </a>
-                            @endif
+                            <a href="{{ Route::has('login') ? route('login') : '#login' }}" class="font-medium transition-colors" :class="scrolled ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-primary-200'">Log in</a>
+                            <a href="{{ Route::has('register') ? route('register') : '#register' }}" class="px-6 py-2.5 rounded-lg bg-gradient-to-r from-primary-500 to-accent-600 text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
+                                Get Started Free
+                            </a>
                         @endauth
+                    @else
+                        <a href="#login" class="font-medium transition-colors" :class="scrolled ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-primary-200'">Log in</a>
+                        <a href="#register" class="px-6 py-2.5 rounded-lg bg-gradient-to-r from-primary-500 to-accent-600 text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
+                            Get Started Free
+                        </a>
                     @endif
                 </div>
 
@@ -159,11 +162,12 @@
                     @auth
                         <a href="{{ url('/dashboard') }}" class="block px-6 py-2.5 rounded-lg bg-gradient-to-r from-primary-500 to-accent-600 text-white font-semibold text-center">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}" class="block text-gray-700 hover:text-primary-600 font-medium">Log in</a>
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="block px-6 py-2.5 rounded-lg bg-gradient-to-r from-primary-500 to-accent-600 text-white font-semibold text-center">Get Started Free</a>
-                        @endif
+                        <a href="{{ Route::has('login') ? route('login') : '#login' }}" class="block text-gray-700 hover:text-primary-600 font-medium">Log in</a>
+                        <a href="{{ Route::has('register') ? route('register') : '#register' }}" class="block px-6 py-2.5 rounded-lg bg-gradient-to-r from-primary-500 to-accent-600 text-white font-semibold text-center">Get Started Free</a>
                     @endauth
+                @else
+                    <a href="#login" class="block text-gray-700 hover:text-primary-600 font-medium">Log in</a>
+                    <a href="#register" class="block px-6 py-2.5 rounded-lg bg-gradient-to-r from-primary-500 to-accent-600 text-white font-semibold text-center">Get Started Free</a>
                 @endif
             </div>
         </div>
@@ -204,7 +208,7 @@
 
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-                    <a href="{{ route('register') }}" class="group px-8 py-4 bg-white text-primary-600 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all flex items-center space-x-2">
+                    <a href="{{ Route::has('register') ? route('register') : '#register' }}" class="group px-8 py-4 bg-white text-primary-600 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all flex items-center space-x-2">
                         <span>Start Free Trial</span>
                         <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                     </a>
@@ -592,7 +596,7 @@
                         </li>
                     </ul>
 
-                    <a href="{{ route('register') }}" class="block w-full text-center px-6 py-3 bg-gray-900 text-white rounded-xl font-bold hover:bg-gray-800 transition-colors">
+                    <a href="{{ Route::has('register') ? route('register') : '#register' }}" class="block w-full text-center px-6 py-3 bg-gray-900 text-white rounded-xl font-bold hover:bg-gray-800 transition-colors">
                         Start Free Trial
                     </a>
                 </div>
@@ -640,7 +644,7 @@
                         </li>
                     </ul>
 
-                    <a href="{{ route('register') }}" class="block w-full text-center px-6 py-3 bg-white text-primary-600 rounded-xl font-bold hover:bg-gray-50 transition-colors">
+                    <a href="{{ Route::has('register') ? route('register') : '#register' }}" class="block w-full text-center px-6 py-3 bg-white text-primary-600 rounded-xl font-bold hover:bg-gray-50 transition-colors">
                         Start Free Trial
                     </a>
                 </div>
@@ -795,7 +799,7 @@
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="{{ route('register') }}" class="group px-10 py-5 bg-white text-primary-600 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all flex items-center space-x-2">
+                <a href="{{ Route::has('register') ? route('register') : '#register' }}" class="group px-10 py-5 bg-white text-primary-600 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all flex items-center space-x-2">
                     <span>Start Free Trial</span>
                     <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                 </a>
