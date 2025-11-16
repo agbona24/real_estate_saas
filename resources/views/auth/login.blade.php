@@ -4,28 +4,52 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Login - {{ config('app.name') }}</title>
+    <title>Login - RealEstate Pro</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700,800,900|poppins:400,500,600,700,800,900&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
 </head>
-<body class="bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100 min-h-screen">
+<body class="bg-gradient-to-br from-blue-600 via-purple-600 to-purple-700 min-h-screen font-sans">
     <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-md w-full">
             <!-- Logo -->
             <div class="text-center mb-8">
-                <div class="flex justify-center mb-4">
-                    <div class="bg-indigo-600 rounded-full p-4">
-                        <i class="fas fa-building text-white text-4xl"></i>
+                <a href="{{ route('home') }}" class="inline-flex items-center space-x-3 mb-6">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg">
+                        <i class="fas fa-building text-white text-2xl"></i>
                     </div>
-                </div>
-                <h2 class="text-3xl font-extrabold text-gray-900">
-                    Real Estate SaaS
+                    <span class="text-3xl font-display font-bold text-white">
+                        RealEstate<span class="gradient-text">Pro</span>
+                    </span>
+                </a>
+                <h2 class="text-3xl font-bold text-white mb-2">
+                    Welcome Back
                 </h2>
-                <p class="mt-2 text-sm text-gray-600">
-                    Sign in to your account
+                <p class="text-blue-100">
+                    Sign in to access your dashboard
                 </p>
             </div>
 
@@ -78,31 +102,23 @@
                                placeholder="••••••••">
                     </div>
 
-                    <!-- Remember Me & Forgot Password -->
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center">
-                            <input id="remember_me"
-                                   type="checkbox"
-                                   name="remember"
-                                   class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-                            <label for="remember_me" class="ml-2 block text-sm text-gray-900">
-                                Remember me
-                            </label>
-                        </div>
-
-                        <div class="text-sm">
-                            <a href="{{ route('password.request') }}" class="font-medium text-indigo-600 hover:text-indigo-500">
-                                Forgot password?
-                            </a>
-                        </div>
+                    <!-- Remember Me -->
+                    <div class="flex items-center mb-6">
+                        <input id="remember_me"
+                               type="checkbox"
+                               name="remember"
+                               class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="remember_me" class="ml-2 block text-sm text-gray-900">
+                            Remember me for 30 days
+                        </label>
                     </div>
 
                     <!-- Submit Button -->
                     <div>
                         <button type="submit"
-                                class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
+                                class="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-xl shadow-lg text-base font-bold text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-150 transform hover:scale-105">
                             <i class="fas fa-sign-in-alt mr-2"></i>
-                            Sign In
+                            Sign In to Dashboard
                         </button>
                     </div>
 
@@ -110,8 +126,8 @@
                     <div class="mt-6 text-center">
                         <p class="text-sm text-gray-600">
                             Don't have an account?
-                            <a href="{{ route('register') }}" class="font-medium text-indigo-600 hover:text-indigo-500">
-                                Create Agency Account
+                            <a href="{{ route('register') }}" class="font-bold text-blue-600 hover:text-purple-600 transition-colors">
+                                Create Free Account →
                             </a>
                         </p>
                     </div>
@@ -143,8 +159,8 @@
             </div>
 
             <!-- Footer -->
-            <p class="mt-8 text-center text-xs text-gray-500">
-                &copy; {{ date('Y') }} Real Estate SaaS. All rights reserved.
+            <p class="mt-8 text-center text-sm text-white/80">
+                &copy; {{ date('Y') }} RealEstatePro. All rights reserved.
             </p>
         </div>
     </div>
