@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         // Seed demo users for testing
         $this->call([
             DemoUsersSeeder::class,
+            DemoDataSeeder::class,
         ]);
     }
 }

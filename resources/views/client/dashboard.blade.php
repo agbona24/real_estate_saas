@@ -49,7 +49,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium text-gray-600">My Properties</p>
-                            <p class="text-3xl font-bold text-gray-900 mt-2">3</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">{{ $stats['my_properties'] }}</p>
                             <p class="text-sm text-blue-600 mt-1">
                                 <i class="fas fa-home"></i> Owned properties
                             </p>
@@ -65,7 +65,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium text-gray-600">Pending Payments</p>
-                            <p class="text-3xl font-bold text-gray-900 mt-2">$2,450</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">${{ number_format($stats['pending_payments'], 0) }}</p>
                             <p class="text-sm text-orange-600 mt-1">
                                 <i class="fas fa-clock"></i> Due soon
                             </p>
@@ -81,7 +81,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium text-gray-600">My Documents</p>
-                            <p class="text-3xl font-bold text-gray-900 mt-2">12</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">{{ $stats['my_documents'] }}</p>
                             <p class="text-sm text-purple-600 mt-1">
                                 <i class="fas fa-file-alt"></i> Available
                             </p>

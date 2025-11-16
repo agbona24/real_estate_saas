@@ -49,9 +49,9 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium text-gray-600">Total Properties</p>
-                            <p class="text-3xl font-bold text-gray-900 mt-2">156</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">{{ $stats['total_properties'] }}</p>
                             <p class="text-sm text-blue-600 mt-1">
-                                <i class="fas fa-arrow-up"></i> 12 added this month
+                                <i class="fas fa-arrow-up"></i> {{ $stats['new_properties_this_month'] }} added this month
                             </p>
                         </div>
                         <div class="bg-blue-100 rounded-full p-4">
@@ -65,7 +65,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium text-gray-600">Active Agents</p>
-                            <p class="text-3xl font-bold text-gray-900 mt-2">24</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">{{ $stats['active_agents'] }}</p>
                             <p class="text-sm text-green-600 mt-1">
                                 <i class="fas fa-check-circle"></i> All active
                             </p>
@@ -97,7 +97,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium text-gray-600">Active Deals</p>
-                            <p class="text-3xl font-bold text-gray-900 mt-2">18</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">{{ $stats['active_deals'] }}</p>
                             <p class="text-sm text-orange-600 mt-1">
                                 <i class="fas fa-handshake"></i> In progress
                             </p>

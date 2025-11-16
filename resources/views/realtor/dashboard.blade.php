@@ -43,15 +43,15 @@
             </div>
 
             <!-- Stats Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 <!-- My Leads -->
                 <div class="bg-white rounded-lg shadow p-6">
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium text-gray-600">My Leads</p>
-                            <p class="text-3xl font-bold text-gray-900 mt-2">42</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">{{ $stats['my_leads'] }}</p>
                             <p class="text-sm text-blue-600 mt-1">
-                                <i class="fas fa-arrow-up"></i> 8 new this week
+                                <i class="fas fa-arrow-up"></i> {{ $stats['new_leads_this_week'] }} new this week
                             </p>
                         </div>
                         <div class="bg-blue-100 rounded-full p-4">
@@ -65,9 +65,9 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium text-gray-600">Active Clients</p>
-                            <p class="text-3xl font-bold text-gray-900 mt-2">28</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">{{ $stats['active_clients'] }}</p>
                             <p class="text-sm text-green-600 mt-1">
-                                <i class="fas fa-check-circle"></i> 5 active deals
+                                <i class="fas fa-check-circle"></i> Active status
                             </p>
                         </div>
                         <div class="bg-green-100 rounded-full p-4">
@@ -91,23 +91,49 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Appointments -->
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-sm font-medium text-gray-600">Upcoming</p>
-                            <p class="text-3xl font-bold text-gray-900 mt-2">7</p>
-                            <p class="text-sm text-orange-600 mt-1">
-                                <i class="fas fa-calendar"></i> Appointments
-                            </p>
+            <!-- Recent Leads -->
+            @if($recentLeads->count() > 0)
+            <div class="bg-white rounded-lg shadow p-6 mb-8">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">
+                    <i class="fas fa-fire text-red-500 mr-2"></i> Recent Leads
+                </h3>
+                <div class="space-y-3">
+                    @foreach($recentLeads as $lead)
+                    <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                        <div class="flex-1">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-user text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">{{ $lead->name }}</h4>
+                                    <p class="text-sm text-gray-600">{{ $lead->email }} • {{ $lead->phone }}</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="bg-orange-100 rounded-full p-4">
-                            <i class="fas fa-calendar-check text-orange-600 text-2xl"></i>
+                        <div class="flex items-center space-x-4">
+                            <div class="text-right">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+                                    {{ $lead->priority === 'high' ? 'bg-red-100 text-red-800' :
+                                       ($lead->priority === 'medium' ? 'bg-yellow-100 text-yellow-800' : 'bg-green-100 text-green-800') }}">
+                                    {{ ucfirst($lead->priority) }} Priority
+                                </span>
+                                <p class="text-xs text-gray-500 mt-1">{{ ucfirst($lead->status) }}</p>
+                            </div>
+                            @if($lead->budget)
+                            <div class="text-right">
+                                <p class="text-sm font-semibold text-gray-900">${{ number_format($lead->budget, 0) }}</p>
+                                <p class="text-xs text-gray-500">Budget</p>
+                            </div>
+                            @endif
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
+            @endif
 
             <!-- Quick Actions -->
             <div class="bg-white rounded-lg shadow p-6">

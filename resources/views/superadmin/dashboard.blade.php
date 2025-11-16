@@ -49,9 +49,9 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium text-gray-600">Total Agencies</p>
-                            <p class="text-3xl font-bold text-gray-900 mt-2">342</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">{{ $stats['total_agencies'] }}</p>
                             <p class="text-sm text-blue-600 mt-1">
-                                <i class="fas fa-arrow-up"></i> 12 new this month
+                                <i class="fas fa-arrow-up"></i> {{ $stats['new_agencies_this_month'] }} new this month
                             </p>
                         </div>
                         <div class="bg-blue-100 rounded-full p-4">
@@ -65,7 +65,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium text-gray-600">Total Users</p>
-                            <p class="text-3xl font-bold text-gray-900 mt-2">8,456</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">{{ $stats['total_users'] }}</p>
                             <p class="text-sm text-green-600 mt-1">
                                 <i class="fas fa-users"></i> Across all agencies
                             </p>
@@ -76,18 +76,18 @@
                     </div>
                 </div>
 
-                <!-- Monthly Revenue -->
+                <!-- Total Properties -->
                 <div class="bg-white rounded-lg shadow p-6">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="text-sm font-medium text-gray-600">Platform Revenue</p>
-                            <p class="text-3xl font-bold text-gray-900 mt-2">$125K</p>
+                            <p class="text-sm font-medium text-gray-600">Total Properties</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">{{ $stats['total_properties'] }}</p>
                             <p class="text-sm text-purple-600 mt-1">
-                                <i class="fas fa-chart-line"></i> This month
+                                <i class="fas fa-home"></i> Platform-wide
                             </p>
                         </div>
                         <div class="bg-purple-100 rounded-full p-4">
-                            <i class="fas fa-dollar-sign text-purple-600 text-2xl"></i>
+                            <i class="fas fa-home text-purple-600 text-2xl"></i>
                         </div>
                     </div>
                 </div>
