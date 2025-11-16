@@ -63,7 +63,7 @@ class DashboardController extends Controller
                 ->count(),
         ];
 
-        return view('agency.dashboard', compact('stats'));
+        return view('tenant.dashboard', compact('stats'));
     }
 
     /**
