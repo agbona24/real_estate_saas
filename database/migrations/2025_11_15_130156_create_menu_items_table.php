@@ -12,6 +12,7 @@ return new class extends Migration
             $table->foreignId('menu_id')->constrained()->onDelete('cascade');
             $table->string('label');
             $table->string('url');
+            $table->string('icon')->nullable();
             $table->foreignId('parent_id')->nullable()->constrained('menu_items')->onDelete('cascade');
             $table->integer('sort_order')->default(0);
             $table->boolean('open_new_tab')->default(false);
