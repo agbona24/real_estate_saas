@@ -69,10 +69,10 @@
                         </svg>
                     </button>
                     <ul x-show="open && sidebarOpen" x-collapse class="mt-1 ml-8 space-y-1">
-                        <li><a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Realtors / Agents</a></li>
-                        <li><a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Team Performance</a></li>
-                        <li><a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Roles & Permissions</a></li>
-                        <li><a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Activity Logs</a></li>
+                        <li><a href="{{ route('agency.team.index') }}" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Realtors / Agents</a></li>
+                        <li><a href="{{ route('agency.team.performance') }}" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Team Performance</a></li>
+                        <li><a href="{{ route('agency.team.roles') }}" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Roles & Permissions</a></li>
+                        <li><a href="{{ route('agency.team.activity-logs') }}" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Activity Logs</a></li>
                     </ul>
                 </div>
             </li>
@@ -96,11 +96,11 @@
                         </svg>
                     </button>
                     <ul x-show="open && sidebarOpen" x-collapse class="mt-1 ml-8 space-y-1">
-                        <li><a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Leads</a></li>
-                        <li><a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Clients</a></li>
-                        <li><a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Follow-ups</a></li>
-                        <li><a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Tasks</a></li>
-                        <li><a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Appointments</a></li>
+                        <li><a href="{{ route('agency.crm.leads') }}" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Leads</a></li>
+                        <li><a href="{{ route('agency.crm.clients') }}" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Clients</a></li>
+                        <li><a href="{{ route('agency.crm.follow-ups') }}" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Follow-ups</a></li>
+                        <li><a href="{{ route('agency.crm.tasks') }}" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Tasks</a></li>
+                        <li><a href="{{ route('agency.crm.appointments') }}" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Appointments</a></li>
                         <li><a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Communication Logs</a></li>
                     </ul>
                 </div>
@@ -125,10 +125,10 @@
                         </svg>
                     </button>
                     <ul x-show="open && sidebarOpen" x-collapse class="mt-1 ml-8 space-y-1">
-                        <li><a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">All Properties</a></li>
+                        <li><a href="{{ route('agency.properties.index') }}" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">All Properties</a></li>
                         <li><a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">All Estates</a></li>
                         <li><a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Units/Plots</a></li>
-                        <li><a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Categories</a></li>
+                        <li><a href="{{ route('agency.properties.categories') }}" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">Categories</a></li>
                     </ul>
                 </div>
             </li>
